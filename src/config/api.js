@@ -6,10 +6,10 @@ const isDevelopment = process.env.NODE_ENV === 'development';
 
 export const API_URL = isDevelopment 
   ? 'http://localhost:5001' 
-  : '';  // Empty string for production - uses relative URLs through nginx
+  : 'https://skyfare-travels.onrender.com/';  // Empty string for production - uses relative URLs through nginx
 
 export const SOCKET_URL = isDevelopment
-  ? 'http://localhost:5001'
-  : window.location.origin;  // Use same origin for production websocket
+  ? 'https://localhost:5001'
+  : 'https://skyfare-travels.onrender.com/';  // Use same origin for production websocket
 
 export default API_URL;
