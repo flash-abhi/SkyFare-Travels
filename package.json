@@ -21,8 +21,11 @@
     "socket.io-client": "^4.8.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server.js",
+    "dev": "react-scripts start",
+    "start:frontend": "react-scripts start",
     "build": "react-scripts build",
+    "hostinger:build": "react-scripts build && cd backend && npm install --production",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

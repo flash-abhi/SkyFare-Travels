@@ -440,5 +440,12 @@ app.use('/api/oauth', require('./backend/routes/oauth'));
 // Wire up blog posts getter for sitemap
 sitemapRouter.setBlogPostsGetter(() => adminRouter.getBlogPosts());
 
+// Serve the React production build for the website UI.
+const buildPath = path.join(__dirname, 'build');
+app.use(express.static(buildPath));
+app.get(/^\/(?!api\/?).*/, (req, res) => {
+  res.sendFile(path.join(buildPath, 'index.html'));
+});
+
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log(`Backend API running on port ${PORT}`));
