@@ -3,7 +3,12 @@ const axios = require('axios');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const path = require('path');
-const mongoose = require('mongoose');
+let mongoose;
+try {
+  mongoose = require('mongoose');
+} catch (error) {
+  mongoose = require('./backend/node_modules/mongoose');
+}
 require('dotenv').config();
 
 const app = express();
@@ -43,7 +48,11 @@ app.post('/api/admin/login', async (req, res) => {
     const isPasswordValid = await bcrypt.compare(password, admin.password);
     if (isPasswordValid) {
       const token = jwt.sign({ admin: { email: admin.email, name: admin.name } }, JWT_SECRET, { expiresIn: '24h' });
-      return res.json({ token, admin: { email: admin.email, name: admin.name } });
+      return res.json({
+        success: true,
+        token,
+        admin: { email: admin.email, name: admin.name }
+      });
     }
     
     return res.status(401).json({ message: 'Invalid email or password' });
