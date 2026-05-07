@@ -5,7 +5,7 @@ const ContactContext = createContext();
 
 export const ContactProvider = ({ children }) => {
   const [siteSettings, setSiteSettings] = useState({
-    siteName: 'MFD Holidays',
+    siteName: 'Skyfare Travels',
     tagline: 'Lock Your Fare. Unlock Your Journey.',
     logoUrl: '/logo.svg',
     faviconUrl: '/favicon.ico',
