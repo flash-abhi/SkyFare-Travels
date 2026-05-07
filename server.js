@@ -3,8 +3,7 @@ const axios = require('axios');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const path = require('path');
-// Use mongoose from backend/node_modules to share connection with models
-const mongoose = require('./backend/node_modules/mongoose');
+const mongoose = require('mongoose');
 require('dotenv').config();
 
 const app = express();
