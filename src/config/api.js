@@ -5,7 +5,7 @@
 const isDevelopment = process.env.NODE_ENV === 'development';
 
 export const API_URL = isDevelopment 
-  ? 'https://' 
+  ? 'http://localhost:5001' 
   : 'https://skyfare-travels-1.onrender.com';  // Production uses same-origin /api routes through Hostinger
 
 export const SOCKET_URL = isDevelopment

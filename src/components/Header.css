@@ -229,27 +229,15 @@
   border-radius: 10px;
   width: 42px;
   height: 42px;
-  margin-left: 300px;
+  margin-left: 680px;
+
   align-items: center;
   justify-content: center;
   cursor: pointer;
   }
 
   .header-right {
-    margin-left: auto;
-  }
-
-  .call-pill {
-    padding: 6px 10px;
-    max-width: 350px;
-  }
-
-  .call-label {
     display: none;
-  }
-
-  .call-number {
-    font-size: 15px;
   }
 }
 
@@ -259,9 +247,7 @@
     gap: 40px;
     margin-top: 10px;
     grid-template-columns: auto auto;
-    grid-template-areas:
-      "logo menu"
-      "call call";
+    grid-template-areas: "logo menu";
     justify-content: space-between;
     align-items: center;
   }
@@ -286,13 +272,10 @@
   }
 
   .call-pill {
-    grid-area: call;
-    padding: 6px 10px;
-    max-width: 100%;
-    width: 100%;
-    justify-content: center;
+    display: none;
   }
 .mobile-menu-tog{
+  grid-area: menu;
   margin-left: 60px;
 }
   .mobile-menu {
@@ -301,11 +284,4 @@
     left: 10px;
   }
 
-  .header-right {
-    grid-area: call;
-    margin-left: 0;
-    width: 100%;
-    min-width: 150px;
-    justify-content: center;
-  }
 }

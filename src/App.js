@@ -7,7 +7,6 @@ import { ContactProvider } from './context/ContactContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
-import FloatingCallBanner from "./components/FloatingCallBanner";
 import StickyCallButton from './components/StickyCallButton';
 import HomeNew from './pages/HomeNew';
 import Flights from './pages/Flights';
@@ -124,7 +123,6 @@ function AppContent() {
         <Route path="/blog/:slug" element={<BlogPost />} />
       </Routes>
       {!isAdminRoute && <StickyCallButton />}
-      {!isAdminRoute && <FloatingCallBanner />}
       {!isAdminRoute && <Footer />}
     </div>
   );

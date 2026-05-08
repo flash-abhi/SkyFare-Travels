@@ -10,6 +10,7 @@ import {
   Search,
   Phone,
   ArrowLeft,
+  ArrowLeftRight,
   ArrowRight,
   ChevronDown,
   DollarSign,
@@ -159,6 +160,14 @@ function HomeNew() {
     }));
   };
 
+  const swapRoute = () => {
+    setSearchData((prev) => ({
+      ...prev,
+      from: prev.to,
+      to: prev.from,
+    }));
+  };
+
   useEffect(() => {
     const closeOnOutside = (event) => {
       if (passengerRef.current && !passengerRef.current.contains(event.target)) {
@@ -259,6 +268,15 @@ function HomeNew() {
                 onChange={(value) => setSearchData({ ...searchData, from: value })}
                 placeholder="From?"
               />
+              <button
+                type="button"
+                className="swap-route-btn"
+                onClick={swapRoute}
+                aria-label="Swap departure and destination"
+                title="Swap departure and destination"
+              >
+                <ArrowLeftRight size={24} />
+              </button>
             </div>
             <div className="aof-search-cell to-cell">
               <Plane size={18} />

@@ -27,6 +27,9 @@ function AirportAutocomplete({ value, onChange, placeholder }) {
         setSelectedAirport(airport);
         setInputValue(`${airport.city} (${airport.code})`);
       }
+    } else {
+      setSelectedAirport(null);
+      setInputValue('');
     }
   }, [value]);
 
