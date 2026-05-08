@@ -195,15 +195,15 @@ function AdminDashboard() {
     tagline: 'Lock Your Fare. Unlock Your Journey.',
     logoUrl: '/logo.svg',
     faviconUrl: '/favicon.ico',
-    tfn: '+1-888-859-0441',
+    tfn: '+1-866-699-8687',
     email: 'support@skyfaretravels.com',
     workingHours: 'Mon-Sun 24/7',
     billingAddress: {
       company: 'SkyFare, Inc.',
-      street: '1309 Coffeen Ave STE 1200',
-      city: 'Sheridan',
-      state: 'WY',
-      zip: '82801',
+      street: '447 Broadway',
+      city: 'New York',
+      state: 'NY',
+      zip: '10013',
       country: 'USA'
     },
     copyrightText: '© 2006-{year} SkyFare, Inc. All rights reserved.',
@@ -4123,7 +4123,7 @@ function AdminDashboard() {
                   type="tel"
                   value={content.contactPhone}
                   onChange={(e) => setContent({...content, contactPhone: e.target.value})}
-                  placeholder="+1-888-859-0441"
+                  placeholder="+1-866-699-8687"
                 />
               </div>
 
@@ -4133,7 +4133,7 @@ function AdminDashboard() {
                   type="text"
                   value={content.contactAddress}
                   onChange={(e) => setContent({...content, contactAddress: e.target.value})}
-                  placeholder="1309 Coffeen Ave STE 1200, Sheridan, WY 82801, USA"
+                  placeholder="447 Broadway, New York, NY 10013 USA"
                 />
               </div>
 
@@ -5376,7 +5376,7 @@ function AdminDashboard() {
                       type="text"
                       value={siteSettingsData.tfn}
                       onChange={(e) => setSiteSettingsData({...siteSettingsData, tfn: e.target.value})}
-                      placeholder="+1-888-859-0441"
+                      placeholder="+1-866-699-8687"
                       required
                     />
                     <small>Displayed in header, footer, and all call-to-action sections</small>
@@ -5446,7 +5446,7 @@ function AdminDashboard() {
                       type="text"
                       value={siteSettingsData.billingAddress.street}
                       onChange={(e) => setSiteSettingsData({...siteSettingsData, billingAddress: {...siteSettingsData.billingAddress, street: e.target.value}})}
-                      placeholder="1309 Coffeen Ave STE 1200"
+                      placeholder="447 Broadway"
                       required
                     />
                   </div>
@@ -5456,7 +5456,7 @@ function AdminDashboard() {
                       type="text"
                       value={siteSettingsData.billingAddress.city}
                       onChange={(e) => setSiteSettingsData({...siteSettingsData, billingAddress: {...siteSettingsData.billingAddress, city: e.target.value}})}
-                      placeholder="Sheridan"
+                      placeholder="New York"
                       required
                     />
                   </div>

@@ -706,7 +706,7 @@ class BookingEmailService {
                 <a href="https://skyfaretravels.com/terms" style="color: #94a3b8; text-decoration: none; margin: 0 12px; font-size: 14px;">Terms</a>
               </p>
               <p style="margin: 0; font-size: 13px; color: #64748b;">skyfaretravels.com</p>
-              <p style="margin: 6px 0; font-size: 12px; color: #475569;">1309 Coffeen Ave STE 1200, Sheridan, WY 82801, USA</p>
+              <p style="margin: 6px 0; font-size: 12px; color: #475569;">447 Broadway, New York, NY 10013 USA</p>
               <p style="margin: 16px 0 0; font-size: 12px; color: #475569;">© ${new Date().getFullYear()} MFD Holidays. All rights reserved.</p>
             </td>
           </tr>
@@ -797,7 +797,7 @@ NEED HELP? Call 24/7: ${contactConfig.getContactSettings().tfn}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 skyfaretravels.com
-1309 Coffeen Ave STE 1200, Sheridan, WY 82801
+447 Broadway, New York, NY 10013 USA
 
 ══════════════════════════════════════════════
     `.trim();

@@ -691,7 +691,7 @@ Sent when: Multiple failed attempts for same account
 
 For questions or issues:
 - **Email**: security@skyfaretravels.com
-- **Phone**: +1-844-480-0252
+- **Phone**: +1-866-699-8687
 - **Documentation**: Check IMPLEMENTATION_SUMMARY.md
 
 ---

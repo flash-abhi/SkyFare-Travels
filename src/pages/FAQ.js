@@ -174,7 +174,7 @@ function FAQ() {
           <h3>Still have questions?</h3>
           <p>Our customer support team is available 24/7 to help you.</p>
           <div className="contact-buttons">
-            <a href="tel:8444800252" className="btn-primary">Call: 844-480-0252</a>
+            <a href="tel:+18666998687" className="btn-primary">Call: +1-866-699-8687</a>
             <a href="mailto:support@skyfaretravels.com" className="btn-secondary">Email Support</a>
           </div>
         </div>

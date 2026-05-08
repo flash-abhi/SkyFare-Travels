@@ -18,17 +18,17 @@ const defaults = {
   faviconUrl: '/favicon.ico',
   
   // Contact
-  tfn: '+1-888-859-0441',
+  tfn: '+1-866-699-8687',
   email: 'support@skyfaretravels.com',
   workingHours: 'Mon-Sun 24/7',
   
   // Billing / Business Address
   billingAddress: {
     company: 'MFD Holidays, Inc.',
-    street: '1309 Coffeen Ave STE 1200',
-    city: 'Sheridan',
-    state: 'WY',
-    zip: '82801',
+    street: '447 Broadway',
+    city: 'New York',
+    state: 'NY',
+    zip: '10013',
     country: 'USA'
   },
   
@@ -106,7 +106,7 @@ const getPublicSettings = () => {
     colors: s.colors,
     siteUrl: s.siteUrl,
     // Backward compatible flat address string
-    address: `${s.billingAddress.street}, ${s.billingAddress.city}, ${s.billingAddress.state} ${s.billingAddress.zip}, ${s.billingAddress.country}`
+    address: `${s.billingAddress.street}, ${s.billingAddress.city}, ${s.billingAddress.state} ${s.billingAddress.zip} ${s.billingAddress.country}`
   };
 };
 

@@ -4,9 +4,9 @@
  */
 
 let contactSettings = {
-  tfn: '+1-888-859-0441',
+  tfn: '+1-866-699-8687',
   email: 'info@skyfaretravels.com',
-  address: '1309 Coffeen Ave STE 1200, Sheridan, WY 82801, USA',
+  address: '447 Broadway, New York, NY 10013 USA',
   workingHours: 'Mon-Sun 24/7'
 };
 

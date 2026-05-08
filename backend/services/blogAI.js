@@ -116,7 +116,7 @@ class BlogAIService {
       `Best ${topic} in ${destination} - Book Now & Save | skyfaretravels.com`,
       `${destination} Travel Guide: ${topic} + Exclusive Flight Deals`,
       `Discover ${destination}: ${topic} | Cheap Flights Available`,
-      `${topic} in ${destination} - Expert Tips & Flight Deals | Call +1-844-480-0252`,
+      `${topic} in ${destination} - Expert Tips & Flight Deals | Call +1-866-699-8687`,
       `${destination} ${topic} Guide 2025 - Save Up to 40% on Travel`,
       `Plan Your ${destination} Trip: ${topic} + Best Flight Prices`
     ];
@@ -125,10 +125,10 @@ class BlogAIService {
 
   generateExcerpt(topic, destination) {
     const templates = [
-      `Planning a trip to ${destination}? Discover the best ${topic.toLowerCase()} with skyfaretravels.com. Get exclusive flight deals, expert travel tips, and personalized service. Call +1-844-480-0252 for unbeatable prices!`,
-      `Book your ${destination} adventure today! This guide covers ${topic.toLowerCase()}, plus find the cheapest flights on skyfaretravels.com. Save up to 40% on vacation packages. Call +1-844-480-0252 now!`,
-      `Looking for ${topic.toLowerCase()} in ${destination}? skyfaretravels.com offers expert guides, best flight prices, and 24/7 support. Visit our website or call +1-844-480-0252 to book your dream vacation.`,
-      `${destination} awaits! Explore ${topic.toLowerCase()} with our comprehensive guide. Find the best flight deals at skyfaretravels.com or call +1-844-480-0252 for personalized travel planning and exclusive offers.`
+      `Planning a trip to ${destination}? Discover the best ${topic.toLowerCase()} with skyfaretravels.com. Get exclusive flight deals, expert travel tips, and personalized service. Call +1-866-699-8687 for unbeatable prices!`,
+      `Book your ${destination} adventure today! This guide covers ${topic.toLowerCase()}, plus find the cheapest flights on skyfaretravels.com. Save up to 40% on vacation packages. Call +1-866-699-8687 now!`,
+      `Looking for ${topic.toLowerCase()} in ${destination}? skyfaretravels.com offers expert guides, best flight prices, and 24/7 support. Visit our website or call +1-866-699-8687 to book your dream vacation.`,
+      `${destination} awaits! Explore ${topic.toLowerCase()} with our comprehensive guide. Find the best flight deals at skyfaretravels.com or call +1-866-699-8687 for personalized travel planning and exclusive offers.`
     ];
     return templates[Math.floor(Math.random() * templates.length)];
   }
@@ -152,7 +152,7 @@ class BlogAIService {
 
 ${destination} is one of the world's most captivating destinations, offering travelers an unforgettable experience. Whether you're interested in ${topic.toLowerCase()}, this guide will help you navigate everything this amazing destination has to offer.
 
-At **skyfaretravels.com**, we specialize in finding the best flight deals and travel packages to help you explore ${destination} without breaking the bank. Call us at **+1-844-480-0252** for personalized travel assistance and exclusive offers.
+At **skyfaretravels.com**, we specialize in finding the best flight deals and travel packages to help you explore ${destination} without breaking the bank. Call us at **+1-866-699-8687** for personalized travel assistance and exclusive offers.
 
 ## Why Visit ${destination}?
 
@@ -238,7 +238,7 @@ Make your money go further with smart budgeting:
 - Money-saving tips
 - Free and low-cost activities
 
-Need help planning your budget? Our travel experts at **+1-844-480-0252** can create a customized itinerary that fits your budget perfectly.
+Need help planning your budget? Our travel experts at **+1-866-699-8687** can create a customized itinerary that fits your budget perfectly.
 
 ## Flight Deals to ${destination}
 
@@ -246,7 +246,7 @@ Looking for cheap flights to ${destination}? We've got you covered! Check out th
 
 ${airlines.map(airline => `**[Book ${airline.name} to ${destination}](https://skyfaretravels.com/airlines/${airline.slug})** - Compare prices, view schedules, and find exclusive deals on ${airline.name} flights.`).join('\n\n')}
 
-💰 **Exclusive Offer**: Call **+1-844-480-0252** and mention this blog to get an additional discount on your ${destination} booking!
+💰 **Exclusive Offer**: Call **+1-866-699-8687** and mention this blog to get an additional discount on your ${destination} booking!
 
 ## Practical Information
 
@@ -275,13 +275,13 @@ ${destination} offers incredible opportunities for ${topic.toLowerCase()}. With 
 ### Why Book with MFD Holidays?
 
 ✈️ **Best Price Guarantee** - We match or beat any competitor's price  
-📞 **24/7 Customer Support** - Call **+1-844-480-0252** anytime  
+📞 **24/7 Customer Support** - Call **+1-866-699-8687** anytime  
 💰 **Exclusive Deals** - Access member-only discounts and promotions  
 🎯 **Personalized Service** - Tailored travel packages for your needs  
 🔒 **Secure Booking** - Safe and protected transactions  
 🌍 **Multiple Airlines** - Compare ${airlineLinks} and 50+ more carriers  
 
-**Ready to book your flight to ${destination}?** Visit [skyfaretravels.com](https://skyfaretravels.com) or call **+1-844-480-0252** to speak with our travel experts and find the best deals on flights, hotels, and vacation packages!
+**Ready to book your flight to ${destination}?** Visit [skyfaretravels.com](https://skyfaretravels.com) or call **+1-866-699-8687** to speak with our travel experts and find the best deals on flights, hotels, and vacation packages!
 
 Browse our **[Airlines Directory](https://skyfaretravels.com/airlines)** to see all available carriers and exclusive airline deals.
 
@@ -289,7 +289,7 @@ Start planning your trip today and create memories that will last a lifetime!
 
 ---
 
-*For the best deals on flights to ${destination} and worldwide destinations, visit [skyfaretravels.com](https://skyfaretravels.com) or call us at +1-844-480-0252*
+*For the best deals on flights to ${destination} and worldwide destinations, visit [skyfaretravels.com](https://skyfaretravels.com) or call us at +1-866-699-8687*
 
 *Last updated: ${new Date().toLocaleDateString()}*
 `;

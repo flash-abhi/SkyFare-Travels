@@ -128,8 +128,8 @@ Edit all main website content from one place:
   "heroSubtitle": "Save up to 40% on flights worldwide",
   "aboutText": "Company description...",
   "contactEmail": "support@skyfaretravels.com",
-  "contactPhone": "+1-844-480-0252",
-  "contactAddress": "1309 Coffeen Ave STE 1200, Sheridan, WY 82801, USA"
+  "contactPhone": "+1-866-699-8687",
+  "contactAddress": "447 Broadway, New York, NY 10013 USA"
 }
 ```
 
@@ -206,7 +206,7 @@ await fetch('http://localhost:5000/api/admin/content', {
   },
   body: JSON.stringify({
     heroTitle: 'New Amazing Title',
-    contactPhone: '+1-844-480-0252'
+    contactPhone: '+1-866-699-8687'
   })
 });
 ```

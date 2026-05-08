@@ -75,9 +75,32 @@ function AppContent() {
   return (
     <div className="App">
       <Helmet>
-        <title>
-          SkyFare - Cheap Flights & Travel Deals | #1 Travel Platform
-        </title>
+        <title>SkyFare Travels | Cheap Flights, Hotels & Travel Deals</title>
+        <meta
+          name="description"
+          content="Book affordable flights, hotels, and vacation packages with SkyFare Travels. Compare travel deals and get 24/7 booking support for your next trip."
+        />
+        <meta
+          name="robots"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
+        <link rel="canonical" href="https://skyfaretravels.com/" />
+        <meta property="og:site_name" content="SkyFare Travels" />
+        <meta property="og:title" content="SkyFare Travels | Cheap Flights, Hotels & Travel Deals" />
+        <meta
+          property="og:description"
+          content="Book affordable flights, hotels, and vacation packages with SkyFare Travels. Compare travel deals and get 24/7 booking support for your next trip."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://skyfaretravels.com/" />
+        <meta property="og:image" content="https://skyfaretravels.com/logo.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="SkyFare Travels | Cheap Flights, Hotels & Travel Deals" />
+        <meta
+          name="twitter:description"
+          content="Book affordable flights, hotels, and vacation packages with SkyFare Travels. Compare travel deals and get 24/7 booking support for your next trip."
+        />
+        <meta name="twitter:image" content="https://skyfaretravels.com/logo.png" />
         <link rel="icon" href="/favicon.png" type="image/*" />
       </Helmet>
       <ScrollToTop />

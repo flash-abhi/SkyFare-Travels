@@ -227,7 +227,7 @@ function HomeNew() {
               <span className="aof-service-icon"><Plane size={24} /></span>
               <span>Flights</span>
             </button>
-            <button className={`aof-service ${activeTab === 'hotels' ? 'active' : ''}`} onClick={() => setActiveTab('hotels')}>
+            <button className={`aof-service ${activeTab === 'hotels' ? 'active' : ''}`} onClick={() => navigate('/hotels')}>
               <span className="aof-service-icon"><Hotel size={24} /></span>
               <span>Hotels</span>
             </button>

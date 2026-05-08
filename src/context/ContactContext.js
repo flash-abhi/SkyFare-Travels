@@ -9,15 +9,15 @@ export const ContactProvider = ({ children }) => {
     tagline: 'Lock Your Fare. Unlock Your Journey.',
     logoUrl: '/logo.svg',
     faviconUrl: '/favicon.ico',
-    tfn: '+1-888-859-0441',
+    tfn: '+1-866-699-8687',
     email: 'support@skyfaretravels.com',
     workingHours: 'Mon-Sun 24/7',
     billingAddress: {
       company: 'MFD Holidays, Inc.',
-      street: '1309 Coffeen Ave STE 1200',
-      city: 'Sheridan',
-      state: 'WY',
-      zip: '82801',
+      street: '447 Broadway',
+      city: 'New York',
+      state: 'NY',
+      zip: '10013',
       country: 'USA'
     },
     copyrightText: `© 2006-${new Date().getFullYear()} MFD Holidays, Inc. All rights reserved.`,
@@ -29,7 +29,7 @@ export const ContactProvider = ({ children }) => {
       footerText: '#e2e8f0'
     },
     siteUrl: 'https://skyfaretravels.com',
-    address: '1309 Coffeen Ave STE 1200, Sheridan, WY 82801, USA'
+    address: '447 Broadway, New York, NY 10013 USA'
   });
   const [loading, setLoading] = useState(true);
 

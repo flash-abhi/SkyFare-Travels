@@ -75,8 +75,8 @@ let websiteContent = {
   heroSubtitle: '',
   aboutText: '',
   contactEmail: 'support@skyfaretravels.com',
-  contactPhone: '+1-844-480-0252',
-  contactAddress: '1309 Coffeen Ave STE 1200, Sheridan, WY 82801, USA'
+  contactPhone: '+1-866-699-8687',
+  contactAddress: '447 Broadway, New York, NY 10013 USA'
 };
 
 // Blog posts storage
@@ -128,9 +128,9 @@ let gdsSettings = {
 
 // Contact Settings storage
 let contactSettings = {
-  tfn: '+1-888-859-0441',
+  tfn: '+1-866-699-8687',
   email: 'support@skyfaretravels.com',
-  address: '1309 Coffeen Ave STE 1200, Sheridan, WY 82801, USA',
+  address: '447 Broadway, New York, NY 10013 USA',
   workingHours: 'Mon-Sun 24/7'
 };
 

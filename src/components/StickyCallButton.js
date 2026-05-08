@@ -8,7 +8,7 @@ function StickyCallButton() {
 
   return (
     <a 
-      href={`tel:${(contactSettings.tfn || '+1-888-859-0441').replace(/[^0-9+]/g, '')}`} 
+      href={`tel:${(contactSettings.tfn || '+1-866-699-8687').replace(/[^0-9+]/g, '')}`} 
       className="sticky-call-button"
       aria-label="Call to book"
     >
@@ -16,7 +16,7 @@ function StickyCallButton() {
       <PhoneCall size={22} />
       <span className="call-text">
         <span className="call-label">Call to Book</span>
-        <span className="call-number">{contactSettings.tfn || '+1-888-859-0441'}</span>
+        <span className="call-number">{contactSettings.tfn || '+1-866-699-8687'}</span>
       </span>
     </a>
   );

@@ -49,8 +49,8 @@
 }
 
 .aof-service-icon {
-  width: 62px;
-  height: 62px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   border: 2px solid #d8dde3;
   background: #fff;
@@ -58,6 +58,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+.aof-service-icon svg {
+  width: 22px;
+  height: 22px;
 }
 
 .aof-service.active .aof-service-icon {
@@ -641,6 +646,28 @@
 @media (max-width: 700px) {
   .aof-hero h1 {
     display: none;
+  }
+
+  .aof-service-tabs {
+    margin-top: 12px;
+  }
+
+  .aof-trip-type {
+    margin: 14px 0 8px;
+  }
+
+  .aof-form-row {
+    margin-top: 0;
+  }
+
+  .aof-service-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .aof-service-icon svg {
+    width: 18px;
+    height: 18px;
   }
 
   .aof-grid-four,

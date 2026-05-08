@@ -355,7 +355,7 @@ Score = 0
 
 For questions:
 - **Email**: security@skyfaretravels.com
-- **Phone**: +1-844-480-0252
+- **Phone**: +1-866-699-8687
 - **Docs**: See `SECURITY_SYSTEM.md`
 
 ---
