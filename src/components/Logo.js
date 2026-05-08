@@ -17,7 +17,7 @@ function Logo({ size = 'medium' }) {
         src={siteSettings.logoUrl || '/logo.png'}
         alt={siteSettings.siteName || 'SkyFare'}
         className="logo-img"
-        onError={(e) => { e.target.src = '/logo.pn'; }}
+        onError={(e) => { e.target.src = '/logo.png'; }}
       />
     </div>
   );

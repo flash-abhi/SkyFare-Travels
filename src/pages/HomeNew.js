@@ -117,6 +117,92 @@ const airlines = [
   },
 ];
 
+const weekdays = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+const monthTitleFormatter = new Intl.DateTimeFormat('en-US', { month: 'short', year: 'numeric' });
+const displayDateFormatter = new Intl.DateTimeFormat('en-US', {
+  month: 'short',
+  day: 'numeric',
+  year: 'numeric',
+});
+
+const getToday = () => {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return today;
+};
+
+const toDateKey = (date) => {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+};
+
+const fromDateKey = (dateKey) => {
+  if (!dateKey) return null;
+  const [year, month, day] = dateKey.split('-').map(Number);
+  return new Date(year, month - 1, day);
+};
+
+const getMonthStart = (date) => new Date(date.getFullYear(), date.getMonth(), 1);
+const addMonths = (date, amount) => new Date(date.getFullYear(), date.getMonth() + amount, 1);
+
+const buildMonthDays = (monthDate) => {
+  const firstDay = getMonthStart(monthDate);
+  const start = new Date(firstDay);
+  start.setDate(start.getDate() - start.getDay());
+
+  return Array.from({ length: 42 }, (_, index) => {
+    const date = new Date(start);
+    date.setDate(start.getDate() + index);
+    date.setHours(0, 0, 0, 0);
+    return {
+      date,
+      key: toDateKey(date),
+      outsideMonth: date.getMonth() !== monthDate.getMonth(),
+    };
+  });
+};
+
+const formatSelectedDate = (dateKey, fallback) => {
+  const date = fromDateKey(dateKey);
+  return date ? displayDateFormatter.format(date) : fallback;
+};
+
+const getOrdinalDay = (day) => {
+  if (day > 3 && day < 21) return `${day}th`;
+  switch (day % 10) {
+    case 1:
+      return `${day}st`;
+    case 2:
+      return `${day}nd`;
+    case 3:
+      return `${day}rd`;
+    default:
+      return `${day}th`;
+  }
+};
+
+const formatMobileDate = (dateKey) => {
+  const date = fromDateKey(dateKey);
+  if (!date) return '';
+  const month = date.toLocaleString('en-US', { month: 'long' });
+  return `${getOrdinalDay(date.getDate())} ${month} ${date.getFullYear()}`;
+};
+
+const formatMobileDateText = (departDate, returnDate, tripType, hasUserSelectedDate) => {
+  if (!hasUserSelectedDate) return 'Select dates';
+
+  const depart = formatMobileDate(departDate);
+  const returning = formatMobileDate(returnDate);
+
+  if (tripType === 'roundtrip' && depart && returning) {
+    return `${depart} \u2192 ${returning}`;
+  }
+
+  return depart || 'Select dates';
+};
+
 function HomeNew() {
   const navigate = useNavigate();
   const { contactSettings } = useContact();
@@ -125,6 +211,11 @@ function HomeNew() {
   const [tripType, setTripType] = useState('roundtrip');
   const [showPassengers, setShowPassengers] = useState(false);
   const passengerRef = useRef(null);
+  const datePickerRef = useRef(null);
+  const [showDatePicker, setShowDatePicker] = useState(false);
+  const [activeDateField, setActiveDateField] = useState('depart');
+  const [calendarMonth, setCalendarMonth] = useState(() => getMonthStart(new Date()));
+  const [hasUserSelectedDate, setHasUserSelectedDate] = useState(false);
   const [dealsStart, setDealsStart] = useState(0);
   const [airlineQuery, setAirlineQuery] = useState('');
   const [searchData, setSearchData] = useState({
@@ -168,15 +259,112 @@ function HomeNew() {
     }));
   };
 
+  const openCalendar = (field) => {
+    setActiveDateField(field);
+    const dateForMonth = fromDateKey(field === 'return' ? searchData.returnDate : searchData.departDate) || new Date();
+    setCalendarMonth(getMonthStart(dateForMonth));
+    setShowDatePicker(true);
+  };
+
+  useEffect(() => {
+    if (tripType === 'oneway' && searchData.returnDate) {
+      setSearchData((prev) => ({ ...prev, returnDate: '' }));
+    }
+  }, [tripType, searchData.returnDate]);
+
   useEffect(() => {
     const closeOnOutside = (event) => {
       if (passengerRef.current && !passengerRef.current.contains(event.target)) {
         setShowPassengers(false);
       }
+      if (datePickerRef.current && !datePickerRef.current.contains(event.target)) {
+        setShowDatePicker(false);
+      }
     };
     document.addEventListener('mousedown', closeOnOutside);
     return () => document.removeEventListener('mousedown', closeOnOutside);
   }, []);
+
+  const handleCalendarDateSelect = (date) => {
+    const today = getToday();
+    if (date < today) return;
+
+    const selectedDate = toDateKey(date);
+    setHasUserSelectedDate(true);
+
+    if (tripType === 'oneway') {
+      setSearchData((prev) => ({ ...prev, departDate: selectedDate, returnDate: '' }));
+      setShowDatePicker(false);
+      return;
+    }
+
+    setSearchData((prev) => {
+      if (activeDateField === 'return') {
+        const depart = fromDateKey(prev.departDate);
+        if (depart && date < depart) {
+          setActiveDateField('return');
+          return { ...prev, departDate: selectedDate, returnDate: '' };
+        }
+        setShowDatePicker(false);
+        return { ...prev, returnDate: selectedDate };
+      }
+
+      const existingReturn = fromDateKey(prev.returnDate);
+      setActiveDateField('return');
+      return {
+        ...prev,
+        departDate: selectedDate,
+        returnDate: existingReturn && existingReturn < date ? '' : prev.returnDate,
+      };
+    });
+  };
+
+  const renderCalendarMonth = (monthDate) => {
+    const departKey = searchData.departDate;
+    const returnKey = tripType === 'roundtrip' ? searchData.returnDate : '';
+    const departDate = fromDateKey(departKey);
+    const returnDate = fromDateKey(returnKey);
+    const today = getToday();
+
+    return (
+      <div className="aof-calendar-month" key={toDateKey(monthDate)}>
+        <div className="aof-calendar-month-title">{monthTitleFormatter.format(monthDate)}</div>
+        <div className="aof-calendar-weekdays">
+          {weekdays.map((day) => (
+            <span key={day}>{day}</span>
+          ))}
+        </div>
+        <div className="aof-calendar-days">
+          {buildMonthDays(monthDate).map(({ date, key, outsideMonth }) => {
+            const isDepart = key === departKey;
+            const isReturn = key === returnKey;
+            const disabled = date < today;
+            const inRange = departDate && returnDate && date > departDate && date < returnDate;
+            const className = [
+              'aof-calendar-day',
+              outsideMonth ? 'outside-month' : '',
+              disabled ? 'disabled' : '',
+              inRange ? 'in-range' : '',
+              isDepart ? 'selected range-start' : '',
+              isReturn ? 'selected range-end' : '',
+            ].filter(Boolean).join(' ');
+
+            return (
+              <button
+                type="button"
+                key={key}
+                className={className}
+                disabled={disabled}
+                onClick={() => handleCalendarDateSelect(date)}
+              >
+                {date.getDate()}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    );
+  };
 
   const handleSearch = () => {
     if (activeTab === 'flights') {
@@ -288,22 +476,74 @@ function HomeNew() {
             </div>
             <div className="aof-search-cell depart-cell">
               <Calendar size={18} />
-              <input
-                type="date"
-                value={searchData.departDate}
-                onChange={(e) => setSearchData({ ...searchData, departDate: e.target.value })}
-                min={new Date().toISOString().split('T')[0]}
-              />
+              <button
+                type="button"
+                className={`aof-date-field ${tripType === 'oneway' ? 'single-date-field' : ''}`}
+                onClick={() => openCalendar('depart')}
+              >
+                {tripType === 'oneway' ? (
+                  <strong>{hasUserSelectedDate ? formatSelectedDate(searchData.departDate, 'Select dates') : 'Select dates'}</strong>
+                ) : (
+                  <>
+                    <span>Depart</span>
+                    <strong>{formatSelectedDate(searchData.departDate, 'Select')}</strong>
+                  </>
+                )}
+              </button>
+              <div className="mobile-date-field">
+                <div
+                  role="button"
+                  tabIndex={0}
+                  className="mobile-date-trigger single-mobile-date"
+                  onClick={() => openCalendar('depart')}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      openCalendar('depart');
+                    }
+                  }}
+                >
+                  <strong>{formatMobileDateText(searchData.departDate, searchData.returnDate, tripType, hasUserSelectedDate)}</strong>
+                </div>
+              </div>
+              {showDatePicker && (
+                <div className={`aof-date-popover ${tripType === 'roundtrip' ? 'double-month' : 'single-month'}`} ref={datePickerRef}>
+                  <div className="aof-calendar-header">
+                    <div className="aof-calendar-nav">
+                      <button type="button" onClick={() => setCalendarMonth((prev) => addMonths(prev, -12))} aria-label="Previous year">
+                        &laquo;
+                      </button>
+                      <button type="button" onClick={() => setCalendarMonth((prev) => addMonths(prev, -1))} aria-label="Previous month">
+                        &lsaquo;
+                      </button>
+                    </div>
+                    <div className="aof-calendar-nav right">
+                      <button type="button" onClick={() => setCalendarMonth((prev) => addMonths(prev, 1))} aria-label="Next month">
+                        &rsaquo;
+                      </button>
+                      <button type="button" onClick={() => setCalendarMonth((prev) => addMonths(prev, 12))} aria-label="Next year">
+                        &raquo;
+                      </button>
+                    </div>
+                  </div>
+                  <div className="aof-calendar-months">
+                    {renderCalendarMonth(calendarMonth)}
+                    {tripType === 'roundtrip' && renderCalendarMonth(addMonths(calendarMonth, 1))}
+                  </div>
+                </div>
+              )}
             </div>
             {tripType === 'roundtrip' && (
               <div className="aof-search-cell return-cell">
                 <Calendar size={18} />
-                <input
-                  type="date"
-                  value={searchData.returnDate}
-                  onChange={(e) => setSearchData({ ...searchData, returnDate: e.target.value })}
-                  min={searchData.departDate || new Date().toISOString().split('T')[0]}
-                />
+                <button
+                  type="button"
+                  className="aof-date-field"
+                  onClick={() => openCalendar('return')}
+                >
+                  <span>Return</span>
+                  <strong>{formatSelectedDate(searchData.returnDate, 'Select')}</strong>
+                </button>
               </div>
             )}
             <div className="aof-search-cell passengers" ref={passengerRef}>

@@ -24,7 +24,12 @@ function Footer() {
         {/* Top Section */}
         <div className="footer-top">
           <div className="footer-column footer-about">
-            
+            <Link to="/" className="footer-logo-link" aria-label="SkyFare Travels home">
+              <Logo size="medium" />
+              <span className="footer-logo-text">
+                {siteSettings.siteName || 'SkyFare Travels'}
+              </span>
+            </Link>
             <p className="footer-description">
               Your trusted partner for the best flight deals, hotels, cruises,
               and vacation packages. We make travel affordable and
