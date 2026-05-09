@@ -46,6 +46,7 @@
   display: inline-flex;
   align-items: center;
   gap: 12px;
+  margin-left: -36px;
   text-decoration: none;
 }
 
@@ -57,9 +58,9 @@
 }
 
 .footer .footer-logo-link .logo-img {
-  width: 180px;
+  width: 300px;
   height: auto;
-  max-height: 82px;
+  max-height: 138px;
   object-fit: contain;
 }
 
@@ -496,11 +497,12 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    margin-left: -60px;
   }
 
   .footer .footer-logo-link .logo-img {
-    width: 68px;
-    max-height: 46px;
+    width: 260px;
+    max-height: 126px;
   }
 
   .footer-logo-text {

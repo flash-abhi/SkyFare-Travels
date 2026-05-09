@@ -37,7 +37,8 @@ function Header() {
 
         <button
           className="mobile-menu-tog"
-          aria-label="Toggle menu"
+          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileMenuOpen}
           onClick={toggleMobileMenu}
         >
           {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}

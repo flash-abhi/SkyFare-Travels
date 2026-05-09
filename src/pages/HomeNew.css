@@ -32,7 +32,7 @@
   margin-top: 34px;
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 12px;
 }
 
 .aof-service {
@@ -43,14 +43,14 @@
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  font-size: 16px;
+  gap: 8px;
+  font-size: 14px;
   cursor: pointer;
 }
 
 .aof-service-icon {
-  width: 54px;
-  height: 54px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   border: 2px solid #d8dde3;
   background: #fff;
@@ -61,8 +61,8 @@
 }
 
 .aof-service-icon svg {
-  width: 22px;
-  height: 22px;
+  width: 19px;
+  height: 19px;
 }
 
 .aof-service.active .aof-service-icon {
@@ -800,7 +800,7 @@
   .deal-card a,
   .deal-card h3 { font-size: 16px; }
   .aof-trip-type button,
-  .aof-service { font-size: 16px; }
+  .aof-service { font-size: 14px; }
   .aof-search-strip.oneway,
   .aof-search-strip.roundtrip { grid-template-columns: 1fr; border-radius: 12px; }
   .aof-search-cell { border-right: none; border-bottom: 1px solid #e2e6ec; }
@@ -834,10 +834,33 @@
 
   .aof-service-tabs {
     margin-top: 12px;
+    gap: 10px;
   }
 
   .aof-trip-type {
-    margin: 14px 0 8px;
+    margin: 14px 0 -20px;
+    gap: 8px;
+    padding: 0;
+  }
+
+  .trip-radio {
+    gap: 6px;
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .trip-radio span {
+    gap: 6px;
+  }
+
+  .trip-radio span::before {
+    width: 12px;
+    height: 12px;
+    border-width: 1.5px;
+  }
+
+  .trip-radio:has(input:checked) span::before {
+    background: radial-gradient(circle, #ffffff 0 3px, #f16427 4px);
   }
 
   .aof-form-row {
@@ -973,13 +996,13 @@
   }
 
   .aof-service-icon {
-    width: 44px;
-    height: 44px;
+    width: 36px;
+    height: 36px;
   }
 
   .aof-service-icon svg {
-    width: 18px;
-    height: 18px;
+    width: 15px;
+    height: 15px;
   }
 
   .aof-grid-four,
