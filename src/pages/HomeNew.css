@@ -873,7 +873,7 @@
   }
 
   .aof-search-cell {
-    min-height: 46px;
+    min-height: 76px;
     padding: 10px 12px;
     gap: 8px;
   }
