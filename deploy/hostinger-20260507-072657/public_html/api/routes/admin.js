@@ -62,7 +62,7 @@ const updateAdminPassword = (email, newPasswordHash) => {
 
 // SEO data storage (in production, use database)
 let seoSettings = {
-  pageTitle: 'Best Flight Deals, Hotels & Cruises | MFD Holidays',
+  pageTitle: 'Best Flight Deals, Hotels & Cruises | Skyfare Travels LLC',
   metaDescription: 'Find the best flight deals, hotels, cruises, and vacation packages at unbeatable prices. Book your next adventure with skyfaretravels.com - Your trusted travel partner.',
   keywords: 'flight deals, cheap flights, hotels, cruises, vacation packages, travel deals, airline tickets',
   ogImage: 'https://skyfaretravels.com/og-image.jpg',

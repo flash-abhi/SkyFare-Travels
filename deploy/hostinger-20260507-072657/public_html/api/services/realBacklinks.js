@@ -10,10 +10,10 @@ const axios = require('axios');
 class RealBacklinkService {
   constructor() {
     this.siteUrl = process.env.SITE_URL || 'https://skyfaretravels.com';
-    this.siteName = process.env.SITE_NAME || 'MFD Holidays';
+    this.siteName = process.env.SITE_NAME || 'Skyfare Travels LLC';
     this.siteEmail = process.env.SITE_EMAIL || 'info@skyfaretravels.com';
     this.sitePhone = process.env.SITE_PHONE || '+1-800-555-0199';
-    this.siteDescription = 'Find the best flight deals, cheap airline tickets, hotel bookings, and vacation packages. Save up to 70% on your next trip with MFD Holidays.';
+    this.siteDescription = 'Find the best flight deals, cheap airline tickets, hotel bookings, and vacation packages. Save up to 70% on your next trip with Skyfare Travels LLC.';
     
     // Real backlinks tracking
     this.liveBacklinks = [];
@@ -748,7 +748,7 @@ class RealBacklinkService {
         headers: {
           'Authorization': `Bearer ${accessToken}`,
           'Content-Type': 'application/x-www-form-urlencoded',
-          'User-Agent': 'MFD Holidays/1.0'
+          'User-Agent': 'Skyfare Travels LLC/1.0'
         }
       });
 
@@ -783,7 +783,7 @@ class RealBacklinkService {
         2. Sign in or create account
         3. Click the "+" button
         4. Add URL: ${this.siteUrl}
-        5. Add title: ${pageData.title || 'Best Flight Deals - MFD Holidays'}
+        5. Add title: ${pageData.title || 'Best Flight Deals - Skyfare Travels LLC'}
         6. Select collection: Travel
       `,
       dofollow: true,

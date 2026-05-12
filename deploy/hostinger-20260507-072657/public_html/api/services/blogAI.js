@@ -112,7 +112,7 @@ class BlogAIService {
 
   generateTitle(topic, destination) {
     const templates = [
-      `${destination} ${topic}: Ultimate Travel Guide 2025 | MFD Holidays`,
+      `${destination} ${topic}: Ultimate Travel Guide 2025 | Skyfare Travels LLC`,
       `Best ${topic} in ${destination} - Book Now & Save | skyfaretravels.com`,
       `${destination} Travel Guide: ${topic} + Exclusive Flight Deals`,
       `Discover ${destination}: ${topic} | Cheap Flights Available`,
@@ -272,7 +272,7 @@ While English is often spoken in tourist areas, learning a few local phrases can
 
 ${destination} offers incredible opportunities for ${topic.toLowerCase()}. With proper planning and this comprehensive guide, you're well-equipped for an amazing adventure. 
 
-### Why Book with MFD Holidays?
+### Why Book with Skyfare Travels LLC?
 
 ✈️ **Best Price Guarantee** - We match or beat any competitor's price  
 📞 **24/7 Customer Support** - Call **+1-844-480-0252** anytime  
@@ -298,7 +298,7 @@ Start planning your trip today and create memories that will last a lifetime!
   generateKeywords(topic, destination, airlines) {
     const airlineNames = airlines.map(a => a.name).join(', ');
     const airlineCodes = airlines.map(a => `${a.code} flights`).join(', ');
-    return `${destination} travel, ${topic.toLowerCase()}, ${destination} guide, visit ${destination}, ${destination} tourism, travel tips, vacation planning, ${destination} attractions, MFD Holidays, cheap flights to ${destination}, ${destination} flight deals, book flights online, best travel deals, ${airlineNames}, ${airlineCodes}`;
+    return `${destination} travel, ${topic.toLowerCase()}, ${destination} guide, visit ${destination}, ${destination} tourism, travel tips, vacation planning, ${destination} attractions, Skyfare Travels LLC, cheap flights to ${destination}, ${destination} flight deals, book flights online, best travel deals, ${airlineNames}, ${airlineCodes}`;
   }
 
   categorize(topic) {

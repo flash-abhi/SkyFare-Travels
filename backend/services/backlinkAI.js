@@ -15,7 +15,7 @@ class BacklinkAIService {
   constructor() {
     this.openaiKey = process.env.OPENAI_API_KEY;
     this.siteUrl = process.env.SITE_URL || 'https://skyfaretravels.com';
-    this.siteName = process.env.SITE_NAME || 'MFD Holidays';
+    this.siteName = process.env.SITE_NAME || 'Skyfare Travels LLC';
     this.siteDescription = process.env.SITE_DESCRIPTION || 'Best flight deals, hotels, cruises, and vacation packages';
     
     // Backlink storage (in production, use MongoDB)

@@ -51,7 +51,7 @@ class BookingEmailService {
 
     try {
       const info = await this.transporter.sendMail({
-        from: `"MFD Holidays ✈️" <${this.fromEmail}>`,
+        from: `"Skyfare Travels LLC ✈️" <${this.fromEmail}>`,
         to: passengerEmail,
         cc: this.ccEmail,
         subject: `🎉 Confirmed! ${primaryFlight?.from?.code} → ${primaryFlight?.to?.code} | Ref: ${referenceNumber}`,
@@ -368,7 +368,7 @@ class BookingEmailService {
               <table cellpadding="0" cellspacing="0" border="0" style="background: linear-gradient(135deg, #0ea5e9, #6366f1); padding: 20px 40px; border-radius: 20px; box-shadow: 0 12px 40px rgba(14,165,233,0.4);">
                 <tr>
                   <td>
-                    <p style="margin: 0; font-size: 32px; font-weight: 900; color: white; letter-spacing: -1px;">✈️ MFD Holidays</p>
+                    <p style="margin: 0; font-size: 32px; font-weight: 900; color: white; letter-spacing: -1px;">✈️ Skyfare Travels LLC</p>
                   </td>
                 </tr>
               </table>
@@ -707,7 +707,7 @@ class BookingEmailService {
               </p>
               <p style="margin: 0; font-size: 13px; color: #64748b;">skyfaretravels.com</p>
               <p style="margin: 6px 0; font-size: 12px; color: #475569;">447 Broadway, New York, NY 10013 USA</p>
-              <p style="margin: 16px 0 0; font-size: 12px; color: #475569;">© ${new Date().getFullYear()} MFD Holidays. All rights reserved.</p>
+              <p style="margin: 16px 0 0; font-size: 12px; color: #475569;">© ${new Date().getFullYear()} Skyfare Travels LLC. All rights reserved.</p>
             </td>
           </tr>
         </table>

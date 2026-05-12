@@ -82,7 +82,7 @@ class EmailNotificationService {
     
     try {
       const info = await this.transporter.sendMail({
-        from: `"MFD Holidays Security" <${this.fromEmail}>`,
+        from: `"Skyfare Travels LLC Security" <${this.fromEmail}>`,
         to: this.adminEmails.join(','),
         subject: `🚨 Security Alert: ${subject}`,
         html: htmlContent,

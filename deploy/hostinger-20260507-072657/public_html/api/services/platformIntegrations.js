@@ -594,7 +594,7 @@ class PlatformIntegrations {
   async submitToDirectory(directoryUrl, businessInfo) {
     // This is a template - actual implementation depends on each directory's structure
     const defaultInfo = {
-      businessName: process.env.SITE_NAME || 'MFD Holidays',
+      businessName: process.env.SITE_NAME || 'Skyfare Travels LLC',
       website: process.env.SITE_URL || 'https://skyfaretravels.com',
       description: 'Best flight deals, hotels, cruises, and vacation packages. Save up to 70% on travel.',
       category: 'Travel',

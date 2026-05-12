@@ -32,7 +32,7 @@ const config = {
   adminPassword: process.env.ADMIN_PASSWORD || 'resert',
   
   siteUrl: process.env.SITE_URL || 'https://skyfaretravels.com',
-  siteName: process.env.SITE_NAME || 'MFD Holidays',
+  siteName: process.env.SITE_NAME || 'Skyfare Travels LLC',
   
   // API credentials (set these in .env)
   pinterest: {

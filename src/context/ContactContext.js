@@ -13,14 +13,14 @@ export const ContactProvider = ({ children }) => {
     email: 'support@skyfaretravels.com',
     workingHours: 'Mon-Sun 24/7',
     billingAddress: {
-      company: 'MFD Holidays, Inc.',
+      company: 'Skyfare Travels LLC',
       street: '447 Broadway',
       city: 'New York',
       state: 'NY',
       zip: '10013',
       country: 'USA'
     },
-    copyrightText: `© 2006-${new Date().getFullYear()} MFD Holidays, Inc. All rights reserved.`,
+    copyrightText: `© 2006-${new Date().getFullYear()} Skyfare Travels LLC. All rights reserved.`,
     socialLinks: { facebook: '', twitter: '', instagram: '', linkedin: '' },
     colors: {
       headerBg: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',

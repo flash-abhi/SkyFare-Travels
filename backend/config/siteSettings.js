@@ -12,7 +12,7 @@ const SETTINGS_FILE = path.join(__dirname, '..', 'data', 'siteSettings.json');
 // Default site settings
 const defaults = {
   // Branding
-  siteName: 'MFD Holidays',
+  siteName: 'Skyfare Travels LLC',
   tagline: 'Lock Your Fare. Unlock Your Journey.',
   logoUrl: '/logo.svg',
   faviconUrl: '/favicon.ico',
@@ -24,7 +24,7 @@ const defaults = {
   
   // Billing / Business Address
   billingAddress: {
-    company: 'MFD Holidays, Inc.',
+    company: 'Skyfare Travels LLC',
     street: '447 Broadway',
     city: 'New York',
     state: 'NY',
@@ -33,7 +33,7 @@ const defaults = {
   },
   
   // Legal
-  copyrightText: '© 2006-{year} MFD Holidays, Inc. All rights reserved.',
+  copyrightText: '© 2006-{year} Skyfare Travels LLC All rights reserved.',
   
   // Social Links
   socialLinks: {
