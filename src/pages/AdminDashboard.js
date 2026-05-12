@@ -199,14 +199,14 @@ function AdminDashboard() {
     email: 'support@skyfaretravels.com',
     workingHours: 'Mon-Sun 24/7',
     billingAddress: {
-      company: 'SkyFare, Inc.',
+      company: 'SkyFare Travels',
       street: '447 Broadway',
       city: 'New York',
       state: 'NY',
       zip: '10013',
       country: 'USA'
     },
-    copyrightText: '© 2006-{year} SkyFare, Inc. All rights reserved.',
+    copyrightText: '© 2006-{year} SkyFare Travels LLC. All rights reserved.',
     socialLinks: { facebook: '', twitter: '', instagram: '', linkedin: '' },
     colors: {
       headerBg: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
@@ -5350,7 +5350,7 @@ function AdminDashboard() {
                       type="text"
                       value={siteSettingsData.copyrightText}
                       onChange={(e) => setSiteSettingsData({...siteSettingsData, copyrightText: e.target.value})}
-                      placeholder="© 2006-{year} SkyFare, Inc. All rights reserved."
+                      placeholder="© 2006-{year} SkyFare Travels LLC. All rights reserved."
                     />
                     <small>Use {'{year}'} as a placeholder for the current year</small>
                   </div>
