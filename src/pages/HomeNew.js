@@ -645,7 +645,7 @@ function HomeNew() {
       </section>
 
       <section className="aof-why">
-        <h2>Why Choose airtravelofare?</h2>
+        <h2>Why Choose skyfare travels?</h2>
         <p>Experience the difference with our premium flight booking service</p>
         <div className="aof-grid-four">
           {whyChoose.map((v) => (
